@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.env-prod 
+.env-n8n
+notas.txt
 # C extensions
 *.so
 
