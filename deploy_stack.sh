@@ -1,3 +1,7 @@
+#!/bin/bash
+
+printf 'Starting deploy stack'
+
 docker compose -f docker-swarm.yaml build &&
 echo "imagem buildada para execução" &&
 docker stack rm nginx &&
