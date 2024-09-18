@@ -67,7 +67,7 @@ services:
       - "traefik.http.middlewares.evo.headers.browserXSSFilter=true"
       - "traefik.http.middlewares.evo.headers.contentTypeNosniff=true"
       - "traefik.http.middlewares.evo.headers.forceSTSHeader=true"
-      - "traefik.http.middlewares.evo.headers.SSLHost=evo.imostech.cloud"
+      - "traefik.http.middlewares.evo.headers.SSLHost=imostech.cloud"
       - "traefik.http.middlewares.evo.headers.STSIncludeSubdomains=true"
       - "traefik.http.middlewares.evo.headers.STSPreload=true"
       - "traefik.http.routers.evo.middlewares=evo@docker"
@@ -80,7 +80,7 @@ services:
       - "5678:5678"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.evo.rule=Host(`n8n.imostech.cloud`)"
+      - "traefik.http.routers.evo.rule=Host(`${SUBDOMAIN}.${DOMAIN_NAME}`)"
       - "traefik.http.routers.evo.tls=true"
       - "traefik.http.routers.evo.entrypoints=https"
       - "traefik.http.routers.evo.tls=true"
@@ -91,15 +91,14 @@ services:
       - "traefik.http.middlewares.evo.headers.browserXSSFilter=true"
       - "traefik.http.middlewares.evo.headers.contentTypeNosniff=true"
       - "traefik.http.middlewares.evo.headers.forceSTSHeader=true"
-      - "traefik.http.middlewares.evo.headers.SSLHost=n8n.imostech.cloud"
+      - "traefik.http.middlewares.evo.headers.SSLHost=${DOMAIN_NAME}"
       - "traefik.http.middlewares.evo.headers.STSIncludeSubdomains=true"
       - "traefik.http.middlewares.evo.headers.STSPreload=true"
-      - "traefik.http.routers.evo.middlewares=evo@docker"
+      - "traefik.http.routers.evo.middlewares=n8n@docker"
 
     environment:
-        # Database
+      # Database
       # - DB_TYPE=sqlite
-
       # - DB_POSTGRESDB_HOST=
       # - DB_POSTGRESDB_PORT=5432
       # - DB_POSTGRESDB_DATABASE=
