@@ -22,6 +22,7 @@ services:
       - 443:443
     environment:
       CF_DNS_API_TOKEN_FILE: /run/secrets/cf_api_token 
+      #CLOUDFLARE_DNS_API_TOKEN: /run/secrets/cf_api_token
       # CF_DNS_API_TOKEN: ${CF_DNS_API_TOKEN} # if using .env
       TRAEFIK_DASHBOARD_CREDENTIALS: ${TRAEFIK_DASHBOARD_CREDENTIALS}
     secrets:
@@ -49,4 +50,3 @@ services:
       - "traefik.http.routers.traefik-secure.tls.domains[0].main=imostech.cloud"
       - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.imostech.cloud"
       - "traefik.http.routers.traefik-secure.service=api@internal"
-
