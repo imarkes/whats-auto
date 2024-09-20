@@ -1,0 +1,4 @@
+SUBDOMAIN=n8n
+DOMAIN_NAME=localhost.nip.io
+GENERIC_TIMEZONE=America/São_Paulo
+SSL_EMAIL="email@hotmail.com"
