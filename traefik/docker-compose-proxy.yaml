@@ -6,7 +6,8 @@ secrets:
 
 networks:
   proxy:
-    external: true
+    driver: overlay
+    name: proxy
 
 
 services:
